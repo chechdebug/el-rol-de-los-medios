@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-K76FQWTX');</script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>El Rol de los Medios | Juego de cartas sobre medios, periodismo y teoría mediática</title>
+  <meta name="description" content="Juego de cartas pedagógico sobre medios de comunicación para estudiantes universitarios de Comunicación Social o Ciencias de la Comunicación. Aprendé teoría mediática jugando: credibilidad, visibilidad y comunidad en un serious game basado en Jenkins, McLuhan, Scolari y más. Proyecto TIF — UBA Ciencias de la Comunicación." />
+  <link rel="canonical" href="https://elroldelosmedios.com/">
+
+  <!-- Open Graph / previews al compartir -->
+  <meta property="og:title" content="El Rol de los Medios — un juego de cartas sobre cómo se construye la información" />
+  <meta property="og:description" content="Juego de cartas pedagógico sobre medios de comunicación. Aprendé teoría mediática jugando: credibilidad, visibilidad y comunidad." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://elroldelosmedios.com/" />
+  <meta property="og:locale" content="es_AR" />
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="assets/favicon.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="colors_and_type.css">
+  <link rel="stylesheet" href="kit.css">
+  <style>
+    /* ---- editorial serif (Carta del día + testimonios) ---- */
+    .serif-display { font-family: 'Newsreader', Georgia, serif; font-weight: 500; letter-spacing: -.01em; }
+    .serif-body { font-family: 'Newsreader', Georgia, serif; font-weight: 400; }
+
+    /* ---- carta del día + contador + testimonios responsive ---- */
+    @media (max-width: 880px) {
+      .cartadia-grid, .contador-grid, .testi-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+      .cartadia-stage { min-height: 0 !important; }
+    }
+    @media (max-width: 620px) {
+      .testi-cards { grid-template-columns: 1fr !important; }
+    }
+
+    /* ---- hero layout ---- */
+    .hero-grid { min-height: 640px; padding-top: 32px; padding-bottom: 64px; }
+    .hero-cards { position: relative; height: 340px; }
+    @media (max-width: 860px) {
+      .hero-grid { grid-template-columns: 1fr !important; }
+      .hero-cards { display: none; }
+    }
+
+    /* ---- responsive grids ---- */
+    @media (max-width: 960px) {
+      .cartas-grid { grid-template-columns: 1fr 1fr !important; }
+    }
+    @media (max-width: 720px) {
+      .steps-grid { grid-template-columns: 1fr 1fr !important; }
+    }
+    @media (max-width: 500px) {
+      .steps-grid { grid-template-columns: 1fr !important; }
+      .cartas-grid { grid-template-columns: 1fr !important; }
+      .quien-grid { grid-template-columns: 1fr !important; }
+      .sugeri-grid { grid-template-columns: 1fr !important; }
+      .forms-row { grid-template-columns: 1fr !important; }
+    }
+
+    /* ---- flip card focus ring ---- */
+    .flip-outer:focus-visible { outline: 3px solid var(--pink); outline-offset: 3px; border-radius: 18px; }
+
+    /* ---- header nav collapse ---- */
+    @media (max-width: 660px) {
+      .hdr-nav { gap: 14px !important; }
+      .hdr-nav a { display: none; }
+    }
+
+    /* ---- hdr link underline ---- */
+    .hdr-link { transition: color .15s; }
+    .hdr-link:hover { color: var(--pink); }
+
+    /* ---- footer ---- */
+    footer {
+      background: var(--ink); color: var(--on-ink-mute);
+      border-top: 2px solid #1e2124;
+      padding: 36px 0;
+    }
+    footer .row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    footer a { color: var(--on-ink-mute); font-size: 14px; transition: color .15s; }
+    footer a:hover { color: var(--on-ink); }
+
+    /* ---- section bg alternation ---- */
+    section.alt { background: var(--paper); }
+    section.sand { background: var(--sand); }
+
+    /* doodle positioning helpers */
+    section { position: relative; overflow: hidden; }
+
+    /* ── REGISTRO: Revista — Newsreader italic serif ── */
+    body.t-revista .display,
+    body.t-revista .h1 {
+      font-family: 'Newsreader', Georgia, serif;
+      font-style: italic;
+      font-weight: 600;
+      letter-spacing: -0.022em;
+      line-height: 1.0;
+    }
+    body.t-revista .eyebrow {
+      text-transform: none;
+      letter-spacing: 0.05em;
+      font-style: italic;
+    }
+    body.t-revista .btn {
+      border-radius: 4px;
+    }
+    body.t-revista .h2 {
+      font-family: 'Newsreader', Georgia, serif;
+      font-style: italic;
+      font-weight: 600;
+    }
+
+    /* ── REGISTRO: Manifiesto — ultra-bold, compressed, uppercase ── */
+    body.t-manifiesto .display {
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.045em;
+      line-height: 0.87;
+      font-size: calc(var(--t-display) * 1.06);
+    }
+    body.t-manifiesto .h1 {
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.035em;
+    }
+    body.t-manifiesto .h2 {
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+    }
+    body.t-manifiesto .eyebrow {
+      letter-spacing: 0.32em;
+      font-size: 11px;
+    }
+    body.t-manifiesto .btn {
+      border-radius: 0;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Game",
+  "name": "El Rol de los Medios",
+  "description": "Juego de cartas pedagógico sobre medios de comunicación para estudiantes universitarios. Serious game basado en teoría mediática.",
+  "url": "https://elroldelosmedios.com/",
+  "genre": "Juego educativo",
+  "audience": {
+    "@type": "EducationalAudience",
+    "educationalRole": "student"
+  },
+  "educationalAlignment": {
+    "@type": "AlignmentObject",
+    "educationalFramework": "Ciencias de la Comunicación",
+    "targetName": "Teoría de medios de comunicación"
+  },
+  "creator": {
+    "@type": "Person",
+    "name": "Cecilia"
+  },
+  "inLanguage": "es",
+  "numberOfPlayers": "2"
+}
+  </script>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K76FQWTX"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="Header.jsx"></script>
+  <script type="text/babel" src="Hero.jsx"></script>
+  <script type="text/babel" src="Content.jsx"></script>
+  <script type="text/babel" src="Cartas.jsx"></script>
+  <script type="text/babel" src="Stats.jsx"></script>
+  <script type="text/babel" src="Forms.jsx"></script>
+  <script type="text/babel" src="FAQ.jsx"></script>
+  <script type="text/babel" src="Tweaks.jsx"></script>
+
+  <script type="text/babel">
+
+
+function Footer() {
+  return (
+    <footer>
+          <div className="container">
+            <div className="row">
+              <img src="assets/logo-horizontal.svg" alt="El Rol de los Medios"
+          style={{ filter: 'invert(1) sepia(8%) saturate(180%) brightness(1.05)', width: "80px", height: "80px" }} />
+              <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
+                <a href="#que-es">Qué es</a>
+                <a href="#carta-dia">Carta del día</a>
+                <a href="#comunidad">Comunidad</a>
+                <a href="Contador.html" target="_blank" rel="noopener">Contador</a>
+                <a href="https://www.instagram.com/elroldelosmedios/" target="_blank" rel="noopener">Instagram</a>
+              </div>
+            </div>
+            <div style={{ marginTop: 18, paddingTop: 18, borderTop: '1px solid #1e2124',
+          fontSize: 12.5, color: '#6b6560', lineHeight: 1.6 }}>El Rol de los Medios — Trabajo Integrador Final, Licenciatura en Ciencias de la Comunicación, UBA, 2026. Cátedra Burgos. Producido por Cecilia Vitelli. 
+
+
+        </div>
+          </div>
+        </footer>);
+
+}
+
+// Scroll tracking para GTM
+function useScrollTracking() {
+  const [tracked, setTracked] = React.useState({});
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['que-es', 'carta-dia', 'como-funciona', 'comunidad', 'faq', 'conseguir'];
+      sections.forEach((id) => {
+        if (tracked[id]) return;
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight * 0.5) {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({ event: 'scroll_to_section', section: id });
+            setTracked((prev) => ({ ...prev, [id]: true }));
+          }
+        }
+      });
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [tracked]);
+}
+
+function App() {
+  const scrollToForm = () => {
+    const el = document.getElementById('conseguir');
+    if (el) {const top = el.getBoundingClientRect().top + window.scrollY - 20;window.scrollTo({ top, behavior: 'smooth' });}
+  };
+
+  useScrollTracking();
+
+  // Track initial page load
+  React.useEffect(() => {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'page_load', page: 'landing' });
+  }, []);
+
+  return (
+    <>
+          <LandingTweaks />
+          <Header onCTA={scrollToForm} />
+          <main>
+            <Hero onCTA={scrollToForm} />
+            <QueEs />
+            <CartaDia />
+            <ComoFunciona />
+            <ParaQuien />
+            <Testimonios />
+            <Contador />
+            <Sugeri />
+            <FAQ />
+            <Conseguir />
+          </main>
+          <Footer />
+        </>);
+
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>
