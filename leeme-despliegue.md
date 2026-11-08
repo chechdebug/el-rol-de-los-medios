@@ -1,27 +1,33 @@
-# El Rol de los Medios — paquete listo para publicar
+# Cómo se publica el sitio
 
-Esta carpeta es el sitio **listo para subir** a un hosting estático (Netlify, Cloudflare
-Pages, GitHub Pages). No requiere compilar nada: el JSX se transpila en el navegador.
+El sitio se publica solo: cada cambio que se guarda (commit) en este repo de GitHub dispara una publicación en Netlify. No hace falta arrastrar carpetas.
 
-## Qué incluye
-- `index.html` — landing page (9 secciones)
-- `Contador.html` — contador de puntos (se abre desde el botón "Abrir contador")
-- `*.jsx`, `kit.css`, `colors_and_type.css` — código y estilos de la landing
-- `assets/` — logos, íconos y favicon
+## Qué hace Netlify en cada publicación
 
-> Nota: se excluyeron los 3 SVG de "doodles" (~16 MB) porque la landing no los usa.
-> Si en el futuro los necesitás, copialos a `assets/`.
+Corre `npm run build` (configurado en `netlify.toml`), que ejecuta `scripts/build.mjs` y arma la carpeta `dist/` con:
 
-## Pasos rápidos (Netlify, sin cuenta de programador)
-1. Entrá a https://app.netlify.com/drop
-2. Arrastrá ESTA carpeta entera (o el .zip descomprimido) al recuadro.
-3. Netlify te da una URL `*.netlify.app`. Probá que todo funcione.
-4. Site settings → Domain management → Add custom domain → `elroldelosmedios.com`.
-5. En Hostinger, configurá el DNS que Netlify te indique (ver guía completa del chat).
+- la landing (`index.html` + `*.jsx` + estilos), con las preguntas frecuentes y los últimos artículos agregados en texto plano para buscadores e IA;
+- el contador (`contador.html`);
+- el blog, a partir de los archivos de `articulos/`;
+- `sitemap.xml`, `blog/feed.xml` y `llms.txt`, generados de nuevo cada vez.
 
-## Verificaciones después de publicar
-- **Contador:** el botón "Abrir contador" abre `Contador.html`.
-- **Formularios:** "Sugerí una carta" y "Conseguí el juego" escriben en tu Google Sheet
-  (vía Apps Script). Probá enviando uno y revisá la planilla.
-- **GTM:** contenedor `GTM-K76FQWTX`. Tiene que estar **publicado** en tagmanager.google.com.
-  Verificá con la extensión "Tag Assistant" o el modo Vista previa de GTM.
+## Estructura
+
+| Carpeta o archivo | Qué es |
+|---|---|
+| `articulos/` | Los artículos del blog en Markdown. Ver `articulos/README.md`. |
+| `index.html`, `*.jsx`, `kit.css`, `colors_and_type.css` | La landing. |
+| `contador.html` | El contador de puntos. |
+| `assets/` | Logos, íconos, estilos del blog e imágenes. |
+| `robots.txt` | Indica a los buscadores dónde está el sitemap. |
+| `scripts/build.mjs` | El script que arma el sitio. |
+| `netlify.toml`, `package.json` | Configuración de la publicación. |
+
+## Si una publicación falla
+
+Netlify mantiene publicada la última versión que funcionó. En Netlify → Deploys aparece el error; si es de un artículo, el mensaje dice cuál y qué corregir. Para volver a una versión anterior: Deploys → elegir una publicación vieja → **Publish deploy**.
+
+## Verificaciones
+
+- **Formularios:** "Sugerí una carta" y "Conseguí el juego" escriben en la Google Sheet vía Apps Script.
+- **GTM:** contenedor `GTM-K76FQWTX`, también incluido en las páginas del blog.

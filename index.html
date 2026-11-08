@@ -167,12 +167,14 @@
   },
   "creator": {
     "@type": "Person",
-    "name": "Cecilia"
+    "name": "Cecilia Vitelli"
   },
   "inLanguage": "es",
-  "numberOfPlayers": "2"
+  "numberOfPlayers": "2",
+  "timeRequired": "PT20M"
 }
   </script>
+  <!-- BUILD:FAQ_JSONLD -->
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -180,21 +182,61 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <div id="root"></div>
+  <div id="root">
+    <!-- Contenido estático para buscadores y asistentes de IA que no ejecutan JavaScript.
+         React lo reemplaza por la landing interactiva apenas carga.
+         Si cambiás un texto de la landing (hero.jsx, content.jsx), actualizalo también acá.
+         Las preguntas frecuentes y los últimos artículos los completa solo scripts/build.mjs. -->
+    <div class="seo-static" style="max-width:760px;margin:0 auto;padding:32px 16px 64px;font-family:Archivo,system-ui,sans-serif;line-height:1.6;color:#0f1112">
+      <p><a href="/"><img src="assets/logo-horizontal.svg" alt="El Rol de los Medios" width="80" height="80"></a></p>
+      <p><strong>Juego de cartas</strong></p>
+      <h1>¿Qué papel juegan los medios?</h1>
+      <p>Un juego de cartas pedagógico que convierte los procesos del ecosistema mediático en decisiones concretas.</p>
+
+      <h2>Los medios no te dicen qué pensar. Te dicen sobre qué pensar.</h2>
+      <p>El problema no es entender la teoría, es que la teoría rara vez se experimenta. <strong>El Rol de los Medios</strong> es un juego de cartas pedagógico que convierte los procesos del ecosistema mediático en decisiones concretas: qué publicar, qué amplificar, a quién silenciar.</p>
+      <p>Diseñado para el aula universitaria. Jugable en 20 minutos. Construido sobre autores y sucesos del ecosistema mediático contemporáneo. Teoría de la Comunicación, Periodismo y Comunicación Digital.</p>
+
+      <h2>Tres métricas. Un ecosistema.</h2>
+      <ul>
+        <li><strong>Credibilidad (CRED).</strong> Mide qué tan confiable perciben tu medio los otros jugadores. Cae rápido con decisiones oportunistas. Sube despacio con consistencia editorial. La base de todo lo demás.</li>
+        <li><strong>Visibilidad (VIS).</strong> Representa el alcance de tus publicaciones en el ecosistema. Alta visibilidad no garantiza credibilidad — y viceversa. Dominar las dos a la vez es el desafío central.</li>
+        <li><strong>Comunidad (COM).</strong> Indica la solidez de tu red de aliados y audiencia fiel. Tu escudo ante las crisis. Un actor con comunidad fuerte resiste ataques que destruirían a otros.</li>
+      </ul>
+
+      <h2>Pensado para los dos lados del aula</h2>
+      <h3>Para quienes enseñan comunicación</h3>
+      <p>Una herramienta para hacer visible lo que los textos describen. El juego modela la agenda setting, la viralidad, la credibilidad y la lógica algorítmica sin que nadie tenga que explicarlos: los jugadores los viven.</p>
+      <p>Incluye manual docente con marco teórico, glosario de mecánicas y preguntas disparadoras para el cierre.</p>
+      <h3>Para quienes estudian (y cuestionan) los medios</h3>
+      <p>¿Qué pasa cuando el algoritmo amplifica todo menos la credibilidad? ¿Cuánto cuesta construir comunidad? El Rol de los Medios pone esas preguntas en tus manos, literalmente.</p>
+      <p>Cartas basadas en autores de programas de estudios (Verón, Peirce, McCombs, Han, Da Empoli, Jenkins). Se juega de a dos, en 20 minutos.</p>
+
+      <!-- BUILD:FAQ_HTML -->
+
+      <h2>Seguí explorando</h2>
+      <ul>
+        <li><a href="/blog/">Blog: artículos sobre medios, credibilidad y enseñanza con juegos</a></li>
+        <!-- BUILD:BLOG_LINKS -->
+        <li><a href="/contador.html">Contador de puntos para jugar</a></li>
+        <li><a href="https://www.instagram.com/elroldelosmedios/">Instagram @elroldelosmedios</a></li>
+      </ul>
+    </div>
+  </div>
 
   <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 
   <script type="text/babel" src="tweaks-panel.jsx"></script>
-  <script type="text/babel" src="Header.jsx"></script>
-  <script type="text/babel" src="Hero.jsx"></script>
-  <script type="text/babel" src="Content.jsx"></script>
-  <script type="text/babel" src="Cartas.jsx"></script>
-  <script type="text/babel" src="Stats.jsx"></script>
-  <script type="text/babel" src="Forms.jsx"></script>
-  <script type="text/babel" src="FAQ.jsx"></script>
-  <script type="text/babel" src="Tweaks.jsx"></script>
+  <script type="text/babel" src="header.jsx"></script>
+  <script type="text/babel" src="hero.jsx"></script>
+  <script type="text/babel" src="content.jsx"></script>
+  <script type="text/babel" src="cartas.jsx"></script>
+  <script type="text/babel" src="stats.jsx"></script>
+  <script type="text/babel" src="forms.jsx"></script>
+  <script type="text/babel" src="faq.jsx"></script>
+  <script type="text/babel" src="tweaks.jsx"></script>
 
   <script type="text/babel">
 
@@ -210,7 +252,8 @@ function Footer() {
                 <a href="#que-es">Qué es</a>
                 <a href="#carta-dia">Carta del día</a>
                 <a href="#comunidad">Comunidad</a>
-                <a href="Contador.html" target="_blank" rel="noopener">Contador</a>
+                <a href="/blog/">Blog</a>
+                <a href="contador.html" target="_blank" rel="noopener">Contador</a>
                 <a href="https://www.instagram.com/elroldelosmedios/" target="_blank" rel="noopener">Instagram</a>
               </div>
             </div>

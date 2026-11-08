@@ -112,7 +112,7 @@ function ParaQuien() {
       color: 'var(--navy)',
       body: '¿Qué pasa cuando el algoritmo amplifica todo menos la credibilidad? ¿Cuánto cuesta construir comunidad? El Rol de los Medios pone esas preguntas en tus manos, literalmente.',
       note: 'No hace falta saber de juegos de cartas. Hace falta querer jugar con las ideas.',
-      benefits: ['Aprendizaje activo: teoría en forma de decisiones reales', 'Cartas basadas en autores de programas de estudios (Verón, Peirce, McCombs, Han, Da Empoli, Jenkins)', 'Se juega de a dos, en menos de media hora'],
+      benefits: ['Aprendizaje activo: teoría en forma de decisiones reales', 'Cartas basadas en autores de programas de estudios (Verón, Peirce, McCombs, Han, Da Empoli, Jenkins)', 'Se juega de a dos, en 20 minutos'],
       cta: 'Quiero jugar',
     },
   ];

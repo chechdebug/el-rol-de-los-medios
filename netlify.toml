@@ -1,0 +1,23 @@
+# Netlify arma el sitio con este archivo en cada cambio del repo.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Que tildes y eñes se vean bien en estos archivos de texto.
+[[headers]]
+  for = "/llms.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+
+[[headers]]
+  for = "/blog/feed.xml"
+  [headers.values]
+    Content-Type = "application/rss+xml; charset=utf-8"

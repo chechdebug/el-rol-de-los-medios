@@ -104,7 +104,7 @@ function FAQ() {
     },
     {
       q: '¿Cuánto dura una partida?',
-      a: 'Una partida típica dura entre 15 y 25 minutos. Ideal para usar en clase sin ocupar toda la hora.'
+      a: 'Una partida dura unos 20 minutos. Ideal para usar en clase sin ocupar toda la hora.'
     },
     {
       q: '¿Cómo se gana una partida?',
@@ -156,24 +156,16 @@ function FAQ() {
     },
     {
       q: '¿Tengo que juntar "maná" o fichas de recursos para poder jugar mis cartas?',
-      a: 'No. El sistema de juego es directo y sin fricciones: en tu turno simplemente robás una carta y jugás una carta. Esto mantiene el ritmo ágil de 15 minutos y evita que la partida se estanque o se vuelva pesada.'
+      a: 'No. El sistema de juego es directo y sin fricciones: en tu turno simplemente robás una carta y jugás una carta. Esto mantiene el ritmo ágil de 20 minutos y evita que la partida se estanque o se vuelva pesada.'
     }
   ];
 
-  // JSON-LD FAQPage schema para SEO
-  const schemaFAQ = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map(item => ({
-      '@type': 'Question',
-      name: item.q,
-      acceptedAnswer: { '@type': 'Answer', text: item.a }
-    }))
-  };
+  // El JSON-LD FAQPage y la versión estática de estas preguntas los genera
+  // scripts/build.mjs a partir de esta misma lista (así buscadores e IA los leen
+  // sin ejecutar JavaScript). Para cambiar una pregunta, editala solo acá.
 
   return (
     <>
-      <script type="application/ld+json">{JSON.stringify(schemaFAQ)}</script>
 
       <section id="faq" className="bg-paper">
         <div className="container" style={{ maxWidth: 720 }}>

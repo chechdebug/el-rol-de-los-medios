@@ -17,15 +17,11 @@ function Hero() {
           </div>
         </div>
         <div className="hero-cards" aria-hidden="true" style={{ position: 'relative', height: 360 }}>
-          <HeroCard color="var(--paper)" rot={-8} x={0} y={30} z={1}
+          <HeroCard color="var(--paper)" rot={-7} x={40} y={30} z={1}
             kicker="Actor" metric="VIS" metricCol="var(--vis)"
             name="La Activista Transmedia"
             mechanic="Multiplicá tu alcance en dos plataformas simultáneas." />
-          <HeroCard color="var(--cred-soft)" rot={5} x={130} y={-10} z={2}
-            kicker="Plataforma" metric="CRED" metricCol="var(--cred)"
-            name="El Algoritmo"
-            mechanic="Silenciá una carta de Actor durante 2 turnos." />
-          <HeroCard color="var(--green)" dark rot={-3} x={255} y={70} z={3}
+          <HeroCard color="var(--green)" dark rot={4} x={225} y={50} z={2}
             kicker="Condición" metric="COM" metricCol="var(--com)"
             name="El Ingeniero del Caos"
             mechanic="Repartí −2 CRED a todos los actores en juego." />

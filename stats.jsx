@@ -16,7 +16,7 @@ function Contador() {
           <p className="body" style={{ marginTop: 24, fontSize: 18.5, lineHeight: 1.6, maxWidth: '42ch' }}>
             Contador de puntos optimizado para celular. Llevá las métricas Credibilidad, Visibilidad y Comunidad en la palma de tu mano durante la partida, sin lápices ni cuentas mentales.
           </p>
-          <a className="btn btn-primary" href="Contador.html" target="_blank" rel="noopener"
+          <a className="btn btn-primary" href="contador.html" target="_blank" rel="noopener"
             onClick={() => { pushDL('click_contador', { section: 'contador' }); }}
             style={{ marginTop: 38, borderRadius: 0, textDecoration: 'none', letterSpacing: '.04em', textTransform: 'uppercase', fontSize: 14 }}>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

@@ -1,0 +1,15 @@
+{
+  "name": "el-rol-de-los-medios",
+  "private": true,
+  "type": "module",
+  "description": "Sitio de El Rol de los Medios: landing, contador y blog",
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  },
+  "dependencies": {
+    "marked": "17.0.6"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

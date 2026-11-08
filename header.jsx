@@ -8,7 +8,7 @@ function Header({ onCTA }) {
     t.addEventListener('scroll', fn); fn();
     return () => t.removeEventListener('scroll', fn);
   }, []);
-  const links = [['Qué es', '#que-es'], ['Carta del día', '#carta-dia'], ['Comunidad', '#comunidad']];
+  const links = [['Qué es', '#que-es'], ['Carta del día', '#carta-dia'], ['Comunidad', '#comunidad'], ['Blog', '/blog/']];
   return (
     <header style={{
       position: 'sticky', top: 0, zIndex: 50,
