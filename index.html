@@ -147,6 +147,42 @@
       text-transform: uppercase;
       font-weight: 900;
     }
+
+    /* ---- pantalla de carga: logo + cartas (se oculta cuando la landing está lista) ---- */
+    #loader {
+      position: fixed; inset: 0; z-index: 9999;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px;
+      background: var(--sand);
+      transition: opacity .45s ease, visibility .45s ease;
+    }
+    #loader .ld-logo { width: 120px; height: 120px; animation: ld-pulse 1.8s ease-in-out infinite; }
+    #loader .ld-stage { position: relative; width: 160px; height: 110px; }
+    #loader .ld-card {
+      position: absolute; left: 50%; top: 50%;
+      width: 60px; height: 86px; margin: -43px 0 0 -30px;
+      border: 2px solid var(--ink); border-radius: 10px; box-shadow: 4px 4px 0 var(--ink);
+      animation: ld-fan 1.8s ease-in-out infinite;
+    }
+    #loader .ld-card:nth-child(1) { background: var(--pink);  --ld-x: -42px; --ld-r: -14deg; }
+    #loader .ld-card:nth-child(2) { background: var(--navy);  --ld-x: 0px;   --ld-r: 0deg; }
+    #loader .ld-card:nth-child(3) { background: var(--green); --ld-x: 42px;  --ld-r: 14deg; }
+    #loader .ld-text {
+      margin: 0; font: 700 13px/1 var(--font-sans); letter-spacing: .2em; text-transform: uppercase;
+      color: var(--stone-500);
+    }
+    @keyframes ld-fan {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      50%      { transform: translate(var(--ld-x), 0) rotate(var(--ld-r)); }
+    }
+    @keyframes ld-pulse {
+      0%, 100% { transform: scale(1); }
+      50%      { transform: scale(1.05); }
+    }
+    body:not(.is-ready) { overflow: hidden; }
+    body.is-ready #loader { opacity: 0; visibility: hidden; pointer-events: none; }
+    @media (prefers-reduced-motion: reduce) {
+      #loader .ld-logo, #loader .ld-card { animation: none; }
+    }
   </style>
   <script type="application/ld+json">
 {
@@ -177,6 +213,15 @@
   <!-- BUILD:FAQ_JSONLD -->
 </head>
 <body>
+  <!-- Pantalla de carga: se muestra mientras React arma la landing (ver App en este mismo archivo). -->
+  <div id="loader" role="status" aria-live="polite" aria-label="Cargando la página">
+    <img class="ld-logo" src="assets/logo-horizontal.svg" alt="El Rol de los Medios" width="120" height="120">
+    <div class="ld-stage" aria-hidden="true">
+      <span class="ld-card"></span><span class="ld-card"></span><span class="ld-card"></span>
+    </div>
+    <p class="ld-text">Cargando…</p>
+  </div>
+  <script>setTimeout(function () { document.body.classList.add('is-ready'); }, 10000);</script>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K76FQWTX"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -304,6 +349,14 @@ function App() {
   React.useEffect(() => {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ event: 'page_load', page: 'landing' });
+  }, []);
+
+  // Oculta la pantalla de carga cuando la landing ya está armada.
+  // Mantiene la animación al menos 1,4 s desde que se abrió la página.
+  React.useEffect(() => {
+    const wait = Math.max(0, 1400 - performance.now());
+    const t = setTimeout(() => document.body.classList.add('is-ready'), wait);
+    return () => clearTimeout(t);
   }, []);
 
   return (
