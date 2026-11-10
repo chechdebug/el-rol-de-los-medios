@@ -128,7 +128,7 @@ function FAQ() {
     },
     {
       q: '¿Se puede usar en secundaria?',
-      a: 'Está diseñado para nivel universitario, pero se ha usado con éxito en los últimos años de secundaria, especialmente en materias de comunicación o ciudadanía.'
+      a: 'Está pensado para el nivel universitario y todavía no lo probamos en secundaria. Si das clases en los últimos años y querés usarlo con tu curso, escribinos: nos encantaría saber cómo funciona.'
     },
     {
       q: '¿Cómo consigo el juego?',
