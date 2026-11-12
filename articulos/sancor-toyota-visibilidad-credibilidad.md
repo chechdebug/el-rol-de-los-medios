@@ -7,7 +7,9 @@ resumen: Sancor Seguros abrió el show de drones de la despedida de Messi con su
 
 En menos de un mes, dos marcas tuvieron la atención de todo el país. A Sancor Seguros la silbó un estadio entero. A Toyota la aplaudieron millones de personas en la calle. Las dos pagaron por estar en un momento histórico; la diferencia estuvo en el lugar que eligió ocupar cada una. Es la misma tensión que pone en juego *El Rol de los Medios*: la visibilidad se consigue rápido, pero la credibilidad cuesta mucho más y se pierde en segundos.
 
-![Reel animado: el caso Sancor vs Toyota explicado con dos cartas de El Rol de los Medios](/assets/sancor-vs-toyota-reel.mp4 "El caso contado en un reel, con las cartas El Ingeniero del Caos y Agenda Setting.")
+!<iframe width="100%" height="575" src="https://www.youtube.com/embed/8EnLOpsp-8E" frameborder="0" allowfullscreen></iframe>
+
+<figcaption><i>El caso contado en un reel, con las cartas El Ingeniero del Caos y Agenda Setting.</i></figcaption>
 
 ## ¿Qué pasó con Sancor Seguros en la despedida de Messi?
 
