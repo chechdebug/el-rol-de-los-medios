@@ -92,6 +92,8 @@ Si te interesa por qué un juego de cartas ayuda a entender estos conceptos, le�
 | Noticiabilidad | Martini (2000) | Alguien filtra qué es noticia, con criterios |
 | Sociedad de plataformas | van Dijck et al. (2018) | Los algoritmos comparten el filtro con las redacciones |
 
+![Machete con los autores y teorías para entender el rol de los medios: Sfez, Lasswell y Wright, Dorfman y Mattelart, Martín-Barbero, McCombs y Shaw, Entman, Verón, Martini y van Dijck](/assets/tabla-autores-teorias-rol-de-los-medios.jpg "El machete: guardalo para repasar antes del parcial.")
+
 ## Referencias
 
 - Aruguete, N. (2015). *El poder de la agenda: Política, medios y público*. Biblos.
