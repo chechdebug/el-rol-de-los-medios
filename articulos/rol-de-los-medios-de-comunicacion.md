@@ -3,6 +3,7 @@ titulo: "¿Cuál es el rol de los medios de comunicación?"
 titulo_seo: "El rol de los medios de comunicación: funciones y teorías"
 descripcion: Qué hacen los medios además de informar: sus funciones clásicas, cómo fijan la agenda, cómo encuadran las noticias y qué cambió con las plataformas.
 fecha: 2026-11-20
+actualizado: 2026-11-24
 resumen: Los medios de comunicación cumplen cuatro funciones clásicas: vigilar el entorno, interpretar los hechos, transmitir la cultura y entretener. Pero su rol va más allá. Eligen qué temas se vuelven visibles (agenda setting), desde qué ángulo se cuentan (encuadre) y controlan al poder político. Hoy comparten ese papel con las plataformas digitales y sus algoritmos.
 ---
 
@@ -93,6 +94,24 @@ Si te interesa por qué un juego de cartas ayuda a entender estos conceptos, le�
 | Sociedad de plataformas | van Dijck et al. (2018) | Los algoritmos comparten el filtro con las redacciones |
 
 ![Machete con los autores y teorías para entender el rol de los medios: Sfez, Lasswell y Wright, Dorfman y Mattelart, Martín-Barbero, McCombs y Shaw, Entman, Verón, Martini y van Dijck](/assets/tabla-autores-teorias-rol-de-los-medios.jpg "El machete: guardalo para repasar antes del parcial.")
+
+## Preguntas frecuentes
+
+### ¿Para qué sirven los medios de comunicación?
+
+Sirven para que sepamos qué pasa más allá de nuestro entorno inmediato: informan, explican los hechos, hacen circular la cultura y entretienen. Además deciden qué temas llegan a la conversación pública y desde qué ángulo, y por eso su papel va más allá de informar.
+
+### ¿Cuál es la función principal de los medios de comunicación?
+
+La más reconocida es informar, lo que Lasswell (1948) llamó vigilancia del entorno: avisar qué está pasando. Pero esa función nunca va sola. Al informar, los medios también eligen qué es noticia y cómo contarla, y ahí está buena parte de su influencia.
+
+### ¿Por qué son importantes los medios de comunicación?
+
+Porque casi todo lo que sabemos sobre la política, la economía o lo que pasa en otros países nos llega a través de ellos. En una democracia, además, permiten controlar a quienes gobiernan y discutir los temas comunes. Cuando los medios fallan o quedan en pocas manos, esa conversación se empobrece.
+
+### ¿Es lo mismo el rol que la función de los medios?
+
+Se usan casi como sinónimos, pero no son lo mismo. Las funciones son las tareas clásicas que cumplen los medios: informar, interpretar, transmitir cultura y entretener. El rol es el lugar que ocupan en la sociedad: el poder de fijar la agenda, encuadrar los hechos y controlar al poder, que hoy comparten con las plataformas digitales.
 
 ## Referencias
 
