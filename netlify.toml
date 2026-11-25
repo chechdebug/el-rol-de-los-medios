@@ -21,3 +21,8 @@
   for = "/blog/feed.xml"
   [headers.values]
     Content-Type = "application/rss+xml; charset=utf-8"
+
+# Funciones de Netlify. deploy-succeeded avisa a Bing (IndexNow) qué páginas
+# cambiaron cada vez que se publica el sitio.
+[functions]
+  directory = "netlify/functions"

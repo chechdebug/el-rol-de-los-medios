@@ -28,7 +28,7 @@ const LOGO = `${SITE}/assets/logo-horizontal.svg`;
 // Archivos del repo que no se publican.
 const EXCLUDE = new Set([
   '.git', '.github', '.gitignore', '.DS_Store', 'node_modules', 'dist',
-  'articulos', 'scripts', 'package.json', 'package-lock.json', 'netlify.toml',
+  'articulos', 'scripts', 'netlify', 'package.json', 'package-lock.json', 'netlify.toml',
   'sitemap.xml', 'llms.txt', // se generan
 ]);
 
