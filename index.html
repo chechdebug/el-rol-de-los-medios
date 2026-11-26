@@ -337,6 +337,29 @@ function useScrollTracking() {
   }, [tracked]);
 }
 
+// Si la dirección trae una sección al final (por ejemplo, el link de la bio de
+// Instagram termina en #conseguir), baja hasta ahí cuando la landing está lista.
+// El navegador no puede hacerlo solo porque la sección todavía no existe al abrir.
+function irASeccionDelLink() {
+  const id = decodeURIComponent(window.location.hash.slice(1));
+  const el = id && document.getElementById(id);
+  if (!el) return;
+  const bajar = () => {
+    const top = el.getBoundingClientRect().top + window.scrollY - 20;
+    window.scrollTo({ top, behavior: 'instant' });
+  };
+  bajar();
+  // Las imágenes que terminan de cargar más arriba corren la sección para abajo.
+  // Durante 3 segundos se vuelve a ajustar cada vez que cambia el alto de la página,
+  // salvo que la persona ya haya empezado a moverse por su cuenta.
+  const obs = new ResizeObserver(bajar);
+  const soltar = () => obs.disconnect();
+  obs.observe(document.querySelector('main') || document.body);
+  ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach((ev) =>
+    window.addEventListener(ev, soltar, { once: true, passive: true }));
+  setTimeout(soltar, 3000);
+}
+
 function App() {
   const scrollToForm = () => {
     const el = document.getElementById('conseguir');
@@ -355,7 +378,10 @@ function App() {
   // Mantiene la animación al menos 1,4 s desde que se abrió la página.
   React.useEffect(() => {
     const wait = Math.max(0, 1400 - performance.now());
-    const t = setTimeout(() => document.body.classList.add('is-ready'), wait);
+    const t = setTimeout(() => {
+      document.body.classList.add('is-ready');
+      irASeccionDelLink();
+    }, wait);
     return () => clearTimeout(t);
   }, []);
 
