@@ -337,11 +337,27 @@ function useScrollTracking() {
   }, [tracked]);
 }
 
-// Si la dirección trae una sección al final (por ejemplo, el link de la bio de
-// Instagram termina en #conseguir), baja hasta ahí cuando la landing está lista.
+// Qué sección pide el link, si pide alguna:
+// 1. #conseguir al final de la dirección;
+// 2. ?ir=conseguir, que es lo que usa la bio de Instagram, porque Instagram
+//    convierte el # de los links de la bio en %23 y deja de funcionar;
+// 3. por las dudas, un #conseguir que Instagram dejó metido adentro de otro
+//    parámetro (por ejemplo, utm_campaign=bio%23conseguir).
+function seccionDelLink() {
+  if (window.location.hash.length > 1) return decodeURIComponent(window.location.hash.slice(1));
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('ir')) return params.get('ir');
+  for (const valor of params.values()) {
+    const i = valor.indexOf('#');
+    if (i !== -1) return valor.slice(i + 1);
+  }
+  return '';
+}
+
+// Si el link pide una sección, baja hasta ahí cuando la landing está lista.
 // El navegador no puede hacerlo solo porque la sección todavía no existe al abrir.
 function irASeccionDelLink() {
-  const id = decodeURIComponent(window.location.hash.slice(1));
+  const id = seccionDelLink();
   const el = id && document.getElementById(id);
   if (!el) return;
   const bajar = () => {
